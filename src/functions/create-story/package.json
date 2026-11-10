@@ -1,0 +1,16 @@
+{
+  "name": "create-story",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Scheduled bedtime story generation with MaaS and domain event publishing",
+  "main": "index.js",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.500.0",
+    "@aws-sdk/util-dynamodb": "^3.500.0",
+    "@huaweicloud/huaweicloud-sdk-csms": "^3.1.220",
+    "@huaweicloud/huaweicloud-sdk-core": "^3.1.220",
+    "@huaweicloud/huaweicloud-sdk-eg": "^3.1.220",
+    "openai": "^4.50.0",
+    "uuid": "^9.0.0"
+  }
+}

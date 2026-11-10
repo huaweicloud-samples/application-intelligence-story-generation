@@ -1,0 +1,28 @@
+# Terraform 状态与本地变量（含实例密码等敏感信息，禁止提交）
+infra/terraform.tfvars
+infra/*.tfstate
+infra/*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+build/
+node_modules/
+
+# CodeArts IDE 本地索引缓存（含 .codebase/file-index.db）
+.codeartsdoer/
+
+# terraform providers schema 缓存（terraform providers schema -json 生成，本地自用）
+infra/sch.json
+
+# Python 运行缓存与本地环境变量（.env.example 模板保留在仓内）
+__pycache__/
+*.py[cod]
+.env
+*.env.local
+*.log
+
+# 一次性诊断 / 清理过程文件
+infra/tmp_diag.tf.removed-*
+
+# others/ 是内部过程产物：验证报告含真实 project_id / domain_id / 账号名，
+# 另有内部工具与流程文档，不随产物上传 GitHub（本地保留，仅忽略提交）。
+others/

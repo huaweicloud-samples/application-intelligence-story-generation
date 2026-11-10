@@ -1,0 +1,13 @@
+{
+  "name": "generate-audio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Story audio synthesis via SIS with OBS upload and presigned URL",
+  "main": "index.js",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.500.0",
+    "@huaweicloud/huaweicloud-sdk-core": "^3.1.220",
+    "@huaweicloud/huaweicloud-sdk-sis": "^3.1.220",
+    "esdk-obs-nodejs": "^3.24.3"
+  }
+}

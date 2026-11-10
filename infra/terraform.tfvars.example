@@ -1,0 +1,43 @@
+# 复制为 terraform.tfvars 并填入实际值（该文件不要提交到代码仓）
+region          = "cn-north-4"
+project_name    = "ai-story-generation"
+obs_bucket_name = "ai-story-generation-audio"
+
+# 必填：GeminiDB 实例管理员密码（数据面账号固定 rwuser，密码即此值）
+geminidb_password = "<your-geminidb-password>"
+
+# 必填：MaaS 预置模型服务 API Key
+maas_api_key = "<your-maas-api-key>"
+
+# 必填：华为云账号域名（IAM 委托归属域）
+domain_name = "<your-huaweicloud-domain>"
+
+# 可选：账号 ID，填了才会创建 OBS 桶策略（函数读写桶需要）
+domain_id = "<your-domain-id>"
+
+# 可选：项目 ID，注入函数环境变量用于控制面 SDK
+project_id = "<your-project-id>"
+
+# 可选：邮件订阅确认邮箱（留空则不订阅）
+notify_email = "<your-email@example.com>"
+
+# ---------------------------------------------------------------------------
+# 默认配置即可跑通：前端关闭、免建 NAT 网关、函数不挂 VPC
+# 详见 docs/deployment-guide.md §6
+# ---------------------------------------------------------------------------
+
+# 硬底线，不可降为 1（兼容接口仅集群形态，num=1 报 DBS.280123）
+geminidb_node_num  = 3
+geminidb_flavor    = "geminidb.cassandra.large.4"
+geminidb_storage_size = 100
+
+# 给 GeminiDB 节点绑 EIP，函数走默认网卡直连 → 免建 NAT 网关
+geminidb_public_eip = true
+fgs_vpc_enabled     = false
+enable_nat_gateway  = false
+
+# CAE 前端起步规格为 8 核 32 GiB，非必需场景关闭
+enable_frontend = false
+
+# 前端镜像（仅 enable_frontend=true 时需要）
+# swr_image = "swr.cn-north-4.myhuaweicloud.com/<org>/story-frontend:1.0.0"

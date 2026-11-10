@@ -1,0 +1,7 @@
+[
+    { "id": "1", "description": "Live on a twitch stream and something goes wrong" },
+    { "id": "2", "description": "In a serverless workshop but the internet cuts out" },
+    { "id": "3", "description": "Doing a live talk and the building gets struck by lightning" },
+    { "id": "4", "description": "Pair programming but they get distracted by something scary" }
+  ]
+  
